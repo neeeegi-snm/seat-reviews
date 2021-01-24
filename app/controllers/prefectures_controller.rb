@@ -6,6 +6,6 @@ class PrefecturesController < ApplicationController
   
   def show
     @prefecture = Prefecture.find(params[:id])
-    @reviews = @prefecture.reviews.order(id: :desc).page(params[:page])
+    @reviews = @prefecture.reviews.order(id: :desc).page(params[:page]).per(5)
   end
 end

@@ -13,10 +13,12 @@
         <%= f.label :password, 'パスワード' %>
         <%= f.password_field :password, class: 'form-control' %>
       </div>
-      <%= f.submit 'セキナビ！アカウントでログイン', class: 'btn btn-primary btn-block' %>
+      <%= f.submit 'セキログ！アカウントでログイン', class: 'btn btn-primary btn-block mb-3' %>
     <% end %>
-    
-    <p>セキナビ！アカウントを持っていない場合は　<%= link_to '新規登録', signup_path %></p>
-    <P>トップページへ戻る</P>
+    <p>セキログ！アカウントを持っていない場合は　<%= link_to '新規登録', signup_path %></p>
   </div>
+</div>
+
+<div>
+  <P><%= link_to 'トップページへ戻る', root_path %></P>
 </div>

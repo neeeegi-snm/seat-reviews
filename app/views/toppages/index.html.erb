@@ -1,9 +1,15 @@
-<% if logged_in? %>
-  <p>ログイン中のユーザ：　<%= current_user.name %></p>
-<% else %>
-  <div class="center jumbotron">
-    <div class="text-center">
-      <h1>ようこそ</h1>
+<div class="text-center jumbotron" style="background-color: #dee6b8 ">
+  <h1>セキログ！へようこそ</h1>
+  <p class="lead">全国の映画館、劇場、コンサートホールの座席レビューサービス</p>
+  <hr class="my-4">
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <P>登録不要！レビューを見るなら</p>
+      <%= link_to '今すぐさがす！', search_path, class: 'btn btn-lg btn-success' %>
+    </div>
+    <div class="col-md-6">
+      <P>感想を共有！レビューを投稿するなら</p>
+      <%= link_to '新規登録', signup_path, class: 'btn btn-lg btn-success' %>
     </div>
   </div>
-<% end %>
+</div>

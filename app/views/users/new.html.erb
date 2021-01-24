@@ -23,10 +23,13 @@
         <%= f.label :password_confirmation, 'パスワード確認' %>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
       </div>
-      <%= f.submit '登録する', class: 'btn btn-primary btn-block' %>
+      <%= f.submit '登録する', class: 'btn btn-primary btn-block mb-3' %>
     <% end %>
     
     <p>すでにアカウントを持っている場合は　<%= link_to 'こちら', login_path %> からログイン</p>
-    <P>トップページへ戻る</P>
   </div>
+</div>
+
+<div>
+  <P><%= link_to 'トップページへ戻る', root_path %></P>
 </div>

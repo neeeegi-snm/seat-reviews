@@ -1,6 +1,6 @@
 <header class="mb-4">
   <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #cfe65c;">
-    <a class="navbar-brand" href="/"><i class="fas fa-couch"></i>セキナビ！</a>
+    <a class="navbar-brand" href="/"><i class="fas fa-couch"></i>セキログ！</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,6 +8,7 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <% if logged_in? %>
+          <li class="nav-item"><%= link_to '投稿する', new_review_path, class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to 'レビューを探す', search_path, class: 'nav-link' %></li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
