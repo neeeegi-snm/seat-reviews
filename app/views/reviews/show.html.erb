@@ -1,0 +1,24 @@
+<div class="card">
+  <h5 class="card-header">
+    <strong><%= @review.theater %> &frasl; <%= @review.seat %></strong> の座席レビュー
+  </h5>
+  <div class="card-body media">
+    <img class="rounded-circle  mr-3" src="<%= gravatar_url(@review.user, { size: 60 }) %>" alt="#">
+    <div class="media-body">
+      <h5 class="card-title mb-1"><%= link_to @review.user.name, @review.user %><span><small>の評価</small></span></h5>
+      <small>鑑賞作品：<%= @review.program %></small>
+      <p>
+        <small class="text-muted"><%= @review.created_at.to_s(:datetime_jp) %></small>
+      </p>
+      <p class="card-text"><%= simple_format(@review.content) %></p>
+      <% if current_user == @review.user %>  
+        <%= link_to '編集', edit_review_path(@review), class: 'btn btn-success inline-block' %>
+        <%= link_to '削除', review_path, method: :delete, data: { confirm: "削除してよろしいですか？" }, class: 'btn btn-danger inline-block' %>
+      <% end %> 
+    </div>  
+  </div>
+</div>
+
+<div class="mt-2">
+  <%= link_to @review.prefecture.name + 'のレビュー一覧にもどる', @review.prefecture %>
+</div>

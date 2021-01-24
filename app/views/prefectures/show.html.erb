@@ -1,3 +1,11 @@
-<div>
+<div class="mb-5">
   <h3><%= @prefecture.name %>の座席レビュー一覧</h3>
+</div>
+
+<div>
+  <%= render 'reviews/reviews', reviews: @reviews %>
+</div>
+
+<div class="mb-5">
+  <%= link_to '都道府県一覧にもどる', search_path %>
 </div>

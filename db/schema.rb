@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_01_21_143923) do
     t.string "theater"
     t.string "seat"
     t.string "program"
-    t.string "content"
+    t.text "content"
     t.bigint "user_id"
     t.bigint "prefecture_id"
     t.datetime "created_at", null: false

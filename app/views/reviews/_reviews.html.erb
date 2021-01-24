@@ -1,0 +1,28 @@
+<div>
+<% reviews.each do |review| %>
+  <div class="row mb-5">
+    <div class="col-sm-4">
+      <h5><%= review.theater %></h5>
+      <p><i class="fas fa-arrow-circle-right"></i>座席：<%= review.seat %></p>
+    </div>
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body media">
+          <img class="rounded-circle mr-3" src="<%= gravatar_url(review.user, { size: 50 }) %>" alt="#">
+          <div class="media-body">
+            <h5 class="card-title mb-60"><%= link_to review.user.name, review.user %><span><small>の評価</small></span></h5>
+            <small class="text-muted"><%= review.created_at.to_s(:datetime_jp) %></small>
+            <hr class="my-2">
+            <p class="card-text"><%= simple_format(review.content.truncate(30)) %></p>
+          </div>
+        </div>
+      </div>
+      <div class="text-right mt-10">
+        <a href="<%= review_path(review) %>" class="btn btn-light">詳細をみる <i class="fas fa-forward"></i></span></a>
+      </div>
+    </div>
+  </div>
+  <hr class="my-4">
+<% end %>
+<%= paginate reviews %>
+</div>

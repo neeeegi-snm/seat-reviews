@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   
   get 'search', to: 'prefectures#index'
   resources :prefectures, only:[:show]
+  
+  resources :reviews, only:[:show, :new, :create, :edit, :update, :destroy]
 end
