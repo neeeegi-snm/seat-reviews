@@ -9,6 +9,7 @@ ja:
         name: ユーザ名
         email: メールアドレス
         password: パスワード
+        password_confirmation: 確認用パスワード
       prefecture:
         name: 都道府県名
         region: 地方名
