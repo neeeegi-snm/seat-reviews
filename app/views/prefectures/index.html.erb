@@ -2,11 +2,11 @@
   <h3>都道府県からレビューを探す</h3>
 </div>
 
-<div>
+<div class="table-responsive">
   <table class="table">
     <tbody>
       <% @grouped_by_region_prefectures.each do |region, prefectures| %>
-        <tr>
+        <tr class="text-nowrap">
           <th scope="row"><%= region[0] %></th>
           <% prefectures.each do |prefecture| %>
             <td><%= link_to prefecture.name, prefecture %></td>
