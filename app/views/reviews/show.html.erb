@@ -1,6 +1,6 @@
 <div class="card">
   <h5 class="card-header">
-    <strong><%= @review.theater %> &frasl; <%= @review.seat %></strong> の座席レビュー
+    <strong><i class="fas fa-map-marker-alt"></i> <%= @review.theater %> &frasl; <%= @review.seat %></strong> の座席レビュー
   </h5>
   <div class="card-body media">
     <img class="rounded-circle  mr-3" src="<%= gravatar_url(@review.user, { size: 60 }) %>" alt="#">

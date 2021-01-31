@@ -6,6 +6,8 @@ class PrefecturesController < ApplicationController
   
   def show
     @prefecture = Prefecture.find(params[:id])
-    @reviews = @prefecture.reviews.order(id: :desc).page(params[:page]).per(5)
+    @q = @prefecture.reviews.ransack(params[:q])
+    @q.sorts = 'id desc' if @q.sorts.empty?
+    @reviews = @q.result(distinct: true).page(params[:page]).per(5)
   end
 end
