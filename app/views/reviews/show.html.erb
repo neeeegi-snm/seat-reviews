@@ -5,17 +5,29 @@
   <div class="card-body media">
     <img class="rounded-circle  mr-3" src="<%= gravatar_url(@review.user, { size: 60 }) %>" alt="#">
     <div class="media-body">
-      <h5 class="card-title mb-1"><%= link_to @review.user.name, @review.user %><span><small>の評価</small></span></h5>
-      <small>鑑賞作品：<%= @review.program %></small>
-      <p>
-        <small class="text-muted"><%= @review.created_at.to_s(:datetime_jp) %></small>
-      </p>
-      <div class="card-text"><%= simple_format(@review.content) %></div>
+      <div class="row mb-1">
+        <div class="col-sm-8">
+          <h5 class="card-title mb-1"><%= link_to @review.user.name, @review.user %><span><small>の評価</small></span></h5>
+          <small>鑑賞作品：<%= @review.program %></small>
+          <p class="mb-1">
+            <small class="text-muted"><%= @review.created_at.to_s(:datetime_jp) %></small>
+          </p>
+        </div>
+        <% if current_user %>
+          <div class="col-sm-4 offset-lg-1 col-lg-3">
+            <%= render 'favorites/like_button', review: @review %>
+          </div>
+        <% end %>
+      </div>
+      <hr class="my-0">
+      <div class="card-text mt-1" style="word-break: break-all">
+        <%= simple_format(@review.content) %>
+      </div>
       <% if current_user == @review.user %>  
         <%= link_to '編集', edit_review_path(@review), class: 'btn btn-success inline-block' %>
         <%= link_to '削除', review_path, method: :delete, data: { confirm: "削除してよろしいですか？" }, class: 'btn btn-danger inline-block' %>
       <% end %> 
-    </div>  
+    </div>
   </div>
 </div>
 
