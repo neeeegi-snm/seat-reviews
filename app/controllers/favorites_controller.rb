@@ -4,14 +4,14 @@ class FavoritesController < ApplicationController
   def create
     review = Review.find(params[:review_id])
     current_user.like(review)
-    flash[:success] = 'レビューをお気に入りに追加しました'
+    flash[:success] = t('.success_favorite')
     redirect_back(fallback_location: root_path)
   end
 
   def destroy
     review = Review.find(params[:review_id])
     current_user.unlike(review)
-    flash[:danger] = 'レビューをお気に入りから削除しました'
+    flash[:danger] = t('.danger_favorite')
     redirect_back(fallback_location: root_path)
   end
 end

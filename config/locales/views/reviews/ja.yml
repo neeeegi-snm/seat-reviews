@@ -1,0 +1,31 @@
+ja:
+  reviews:
+    reviews:
+      seat: "座席： %{seat}"
+      card_title: "の評価"
+      detail: "詳細をみる"
+    show:
+      review_title_html: <strong><i class="fas fa-map-marker-alt"></i> %{review_theater}  &frasl; %{review_seat}</strong>　の座席レビュー
+      program: "鑑賞作品：%{review_program}"
+      card_title: "の評価"
+      delete_confirm: "削除してよろしいですか？"
+      back_prefindex: "%{name_pref}のレビュー一覧に戻る"
+    new:
+      title: "座席レビューを投稿する"
+      sub_title: "感想を記録して共有しましょう"
+    edit:
+      title: "レビュー内容の編集"
+      back_showpage: "レビュー詳細ページに戻る"
+    form:
+      theater_placeholder: "例　セキログ！シアター"
+      seat_placeholder: "例　シアター５／F－１６"
+      program_placeholder: "例　映画セキログ！　シーズン１"
+      content_placeholder: "ここにその座席からのスクリーン・ステージなどの見え方や感想を記入してください"
+    create:
+      success_post: "レビューを投稿しました"
+      danger_post: "レビューの投稿に失敗しました"
+    update:
+      success_update: "レビューを編集しました"
+      danger_update: "レビューの編集に失敗しました"
+    destroy:
+      success_destroy: "レビューを削除しました"
