@@ -13,10 +13,10 @@ class ReviewsController < ApplicationController
   def create
     @review = current_user.reviews.build(review_params)
     if @review.save
-      flash[:success] = 'レビューを投稿しました'
+      flash[:success] = t('.success_post')
       redirect_to @review
     else
-      flash.now[:danger] = 'レビューの投稿に失敗しました'
+      flash.now[:danger] = t('.danger_post')
       render :new
     end
   end
@@ -26,17 +26,17 @@ class ReviewsController < ApplicationController
 
   def update
     if @review.update(review_params)
-      flash[:success] = 'レビューを編集しました'
+      flash[:success] = t('.success_update')
       redirect_to @review
     else
-      flash.now[:danger] = 'レビューの編集に失敗しました'
+      flash.now[:danger] = t('.danger_update')
       render :edit
     end
   end
 
   def destroy
     @review.destroy
-    flash[:success] = 'レビューを削除しました'
+    flash[:success] = t('.success_destroy')
     redirect_to user_url(id: current_user.id)
   end
   

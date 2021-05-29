@@ -1,0 +1,6 @@
+ja:
+  layouts:
+    navbar:
+      app_name: "セキログ！"
+      post_page: "投稿する"
+      search_page: "レビューを探す"

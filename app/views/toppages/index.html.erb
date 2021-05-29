@@ -1,15 +1,15 @@
 <div class="text-center jumbotron" style="background-color: #dee6b8 ">
-  <h1>セキログ！へようこそ</h1>
-  <p class="lead">全国の映画館、劇場、コンサートホールの座席レビューサービス</p>
+  <h1><%= t('.welcome_message') %></h1>
+  <p class="lead"><%= t('.introduction') %></p>
   <hr class="my-4">
   <div class="row mt-4">
     <div class="col-md-6">
-      <P>登録不要！レビューを見るなら</p>
-      <%= link_to '今すぐさがす！', search_path, class: 'btn btn-lg btn-success' %>
+      <p><%= t('.search_invitation') %></p>
+      <%= link_to t('.search_page'), search_path, class: 'btn btn-lg btn-success' %>
     </div>
     <div class="col-md-6">
-      <P>感想を共有！レビューを投稿するなら</p>
-      <%= link_to '新規登録', signup_path, class: 'btn btn-lg btn-success' %>
+      <p><%= t('.signup_invitation') %></p>
+      <%= link_to t('dictionary.words.signup'), signup_path, class: 'btn btn-lg btn-success' %>
     </div>
   </div>
 </div>

@@ -1,0 +1,9 @@
+ja:
+  users:
+    new:
+      title: "セキナビ！へようこそ"
+      sub_title: "新規登録（無料）をして利用を開始しましょう"
+      login_page: "すでにアカウントを持っている場合はこちらからログイン"
+    create:
+      success_signup: "ユーザを登録しました"
+      danger_signup: "ユーザを登録できませんでした"

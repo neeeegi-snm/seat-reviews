@@ -1,0 +1,11 @@
+ja:
+  sessions:
+    new:
+      title: "ログイン"
+      login: "セキログ！アカウントでログイン"
+      signup_page: "セキログ！アカウントを持っていない場合は新規登録"
+    create:
+      success_login: "ログインしました"
+      danger_login: "メールアドレスかパスワードに誤りがあります"
+    destroy:  
+      success_logout: "ログアウトしました"

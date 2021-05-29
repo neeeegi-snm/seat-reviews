@@ -1,35 +1,34 @@
 <div class="text-center">
-  <h3>セキナビ！へようこそ</h3>
-  <P>新規登録（無料）をして利用を開始しましょう</P>
+  <h3><%= t('.title') %></h3>
+  <p><%= t('.sub_title') %></p>
 </div>
-
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
     <%= form_with(model: @user, local: true) do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
       <div class="form-group">
-        <%= f.label :name, 'ユーザ名' %>
+        <%= f.label :name %>
         <%= f.text_field :name, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :email, 'メールアドレス' %>
+        <%= f.label :email %>
         <%= f.email_field :email, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :password, 'パスワード' %>
+        <%= f.label :password %>
         <%= f.password_field :password, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :password_confirmation, 'パスワード確認' %>
+        <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
       </div>
-      <%= f.submit '登録する', class: 'btn btn-primary btn-block mb-3' %>
+      <%= f.submit t('helpers.submit.create'), class: 'btn btn-primary btn-block mb-3' %>
     <% end %>
     
-    <p>すでにアカウントを持っている場合は　<%= link_to 'こちら', login_path %> からログイン</p>
+    <p><%= link_to t('.login_page'), login_path %></p>
   </div>
 </div>
 
 <div>
-  <P><%= link_to 'トップページへ戻る', root_path %></P>
+  <P><%= link_to t('dictionary.words.back_toppage'), root_path %></P>
 </div>
