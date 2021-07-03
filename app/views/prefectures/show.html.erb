@@ -1,13 +1,13 @@
 <div class="row mb-5">
   <div class="col-lg-6">
-    <h3><%= @prefecture.name %>の座席レビュー一覧</h3>
+    <h3><%= t('.title', prefecture_name: @prefecture.name) %></h3>
   </div>
   <div class="offset-md-6 col-md-6 offset-lg-1 col-lg-5 text-right">
     <%= search_form_for @q, url: prefecture_path do |f| %>
       <div class="input-group">
-        <%= f.search_field :theater_cont, class: 'form-control form-control-sm', placeholder: '劇場名で検索' %>
-        <%= f.submit "検索", class: 'btn btn-secondary btn-sm input-group-btn'%>
-        <%= link_to 'クリア', @prefecture, class: 'btn btn-light btn-sm' %>
+        <%= f.search_field :theater_cont, class: 'form-control form-control-sm', placeholder: t('.placeholder') %>
+        <%= f.submit t('helpers.submit.search'), class: 'btn btn-secondary btn-sm input-group-btn'%>
+        <%= link_to t('helpers.submit.clear'), @prefecture, class: 'btn btn-light btn-sm' %>
       </div>
     <% end %>
   </div>
@@ -18,5 +18,5 @@
 </div>
 
 <div class="mb-5">
-  <%= link_to '都道府県一覧にもどる', search_path %>
+  <%= link_to t('.back_prefindex'), search_path %>
 </div>

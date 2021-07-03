@@ -1,0 +1,8 @@
+ja:
+  prefectures:
+    index:
+      title: "都道府県からレビューを探す"
+    show: 
+      title: "%{prefecture_name}のレビュー一覧"
+      placeholder: "劇場名で検索"
+      back_prefindex: "都道府県一覧に戻る"

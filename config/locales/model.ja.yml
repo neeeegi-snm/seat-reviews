@@ -1,0 +1,24 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザ
+      prefecture: 都道府県
+      review: レビュー
+      favorite: お気に入り
+    attributes:
+      user:
+        name: ユーザ名
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード（確認入力用）
+      prefecture:
+        name: 都道府県名
+        region: 地方名
+      review:
+        theater: 劇場名
+        seat: 座席番号
+        program: 鑑賞作品
+        content: 感想・評価
+        user: ユーザ名
+        prefecture: 劇場の所在地
+        prefecture_id: 劇場の所在地

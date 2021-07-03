@@ -1,0 +1,8 @@
+ja:
+  favorites:
+    like_button:
+      unfavorite: "お気に入り済"
+    create:
+      success_favorite: "レビューをお気に入りに追加しました"
+    destroy:
+      danger_favorite: "レビューをお気に入りから削除しました"

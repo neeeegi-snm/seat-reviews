@@ -1,14 +1,14 @@
 <div class="card">
   <h5 class="card-header">
-    <strong><i class="fas fa-map-marker-alt"></i> <%= @review.theater %> &frasl; <%= @review.seat %></strong> の座席レビュー
+    <%= t('.review_title_html', review_theater: @review.theater, review_seat: @review.seat) %>
   </h5>
   <div class="card-body media">
     <img class="rounded-circle  mr-3" src="<%= gravatar_url(@review.user, { size: 60 }) %>" alt="#">
     <div class="media-body">
       <div class="row mb-1">
         <div class="col-sm-8">
-          <h5 class="card-title mb-1"><%= link_to @review.user.name, @review.user %><span><small>の評価</small></span></h5>
-          <small>鑑賞作品：<%= @review.program %></small>
+          <h5 class="card-title mb-1"><%= link_to @review.user.name, @review.user %><span><small><%= t('.card_title') %></small></span></h5>
+          <small><%= t('.program', review_program: @review.program) %></small>
           <p class="mb-1">
             <small class="text-muted"><%= @review.created_at.to_s(:datetime_jp) %></small>
           </p>
@@ -24,13 +24,13 @@
         <%= simple_format(@review.content) %>
       </div>
       <% if current_user == @review.user %>  
-        <%= link_to '編集', edit_review_path(@review), class: 'btn btn-success inline-block' %>
-        <%= link_to '削除', review_path, method: :delete, data: { confirm: "削除してよろしいですか？" }, class: 'btn btn-danger inline-block' %>
+        <%= link_to t('helpers.submit.edit'), edit_review_path(@review), class: 'btn btn-success inline-block' %>
+        <%= link_to t('helpers.submit.delete'), review_path, method: :delete, data: { confirm: t('.delete_confirm') }, class: 'btn btn-danger inline-block' %>
       <% end %> 
     </div>
   </div>
 </div>
 
 <div class="mt-2">
-  <%= link_to @review.prefecture.name + 'のレビュー一覧にもどる', @review.prefecture %>
+  <%= link_to t('.back_prefindex', name_pref: @review.prefecture.name) , @review.prefecture %>
 </div>

@@ -1,24 +1,24 @@
     <%= form_with(model: review, local: true) do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
       <div class="form-group">
-        <%= f.label :prefecture_id, '劇場の所在地' %>
-        <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, { include_blank: '選択して下さい' }, { class: 'form-control' }  %>
+        <%= f.label :prefecture_id %>
+        <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, { include_blank: t('helpers.select.prompt') }, { class: 'form-control' }  %>
       </div>
       <div class="form-group">
-        <%= f.label :theater, '劇場名' %>
-        <%= f.text_field :theater, class: 'form-control', placeholder: '例　セキログ！シアター' %>
+        <%= f.label :theater %>
+        <%= f.text_field :theater, class: 'form-control', placeholder: t('.theater_placeholder') %>
       </div>
       <div class="form-group">
-        <%= f.label :seat, '座席番号' %>
-        <%= f.text_field :seat, class: 'form-control', placeholder: '例　シアター５／F－１６' %>
+        <%= f.label :seat %>
+        <%= f.text_field :seat, class: 'form-control', placeholder: t('.seat_placeholder') %>
       </div>
       <div class="form-group">
-        <%= f.label :program, '鑑賞作品' %>
-        <%= f.text_field :program, class: 'form-control', placeholder: '例　映画セキログ！　シーズン１' %>
+        <%= f.label :program %>
+        <%= f.text_field :program, class: 'form-control', placeholder: t('.program_placeholder') %>
       </div>
       <div class="form-group">
-        <%= f.label :content, '感想・評価' %>
-        <%= f.text_area :content, class: 'form-control', placeholder: 'ここにその座席からのスクリーン・ステージなどの見え方や感想を記入してください' %>
+        <%= f.label :content %>
+        <%= f.text_area :content, class: 'form-control', placeholder: t('.content_placeholder') %>
       </div>
       <%= f.submit button_text, class: 'btn btn-primary btn-block' %>
     <% end %>

@@ -1,6 +1,6 @@
 <header class="mb-4">
   <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #cfe65c;">
-    <a class="navbar-brand" href="/"><i class="fas fa-couch"></i>セキログ！</a>
+    <a class="navbar-brand" href="/"><i class="fas fa-couch"></i><%= t('.app_name') %></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,20 +8,20 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <% if logged_in? %>
-          <li class="nav-item"><%= link_to '投稿する', new_review_path, class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to 'レビューを探す', search_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to t('.post_page'), new_review_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to t('.search_page'), search_path, class: 'nav-link' %></li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
             <ul class="dropdown-menu dropdown-menu-right">
-              <li class="dropdown-item"><%= link_to 'マイページ', user_path(current_user) %></li>
+              <li class="dropdown-item"><%= link_to t('dictionary.words.mypage'), user_path(current_user) %></li>
               <li class="dropdown-divider"></li>
-              <li class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete %></li>
+              <li class="dropdown-item"><%= link_to t('dictionary.words.logout'), logout_path, method: :delete %></li>
             </ul>
           </li>
         <% else %> 
-          <li class="nav-item"><%= link_to 'レビューを探す', search_path, class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to '新規登録', signup_path, class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to 'ログイン', login_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to t('.search_page'), search_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to t('dictionary.words.signup'), signup_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to t('dictionary.words.login'), login_path, class: 'nav-link' %></li>
         <% end %>
       </ul>
     </div>
